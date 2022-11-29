@@ -1,0 +1,1 @@
+export const getSize = (size) => (typeof size === "number" ? `${size}%` : `${size}px`);
