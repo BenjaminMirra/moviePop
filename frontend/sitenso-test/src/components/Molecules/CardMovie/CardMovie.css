@@ -1,15 +1,22 @@
 .cardMovie{
     width: 320px;
-    height: 500px;
     margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #eee;
     border-radius: 10px;
+    padding-bottom: 15px;
 }
 
 .cardMovie-img img{
-    width: 90%;
+    width: 320px;
+    height: 380px;
+    border-radius: 20px;
+}
+
+.cardMovie-title h2{
+    margin: 0;
+    padding-top: 5px;
+    
 }
