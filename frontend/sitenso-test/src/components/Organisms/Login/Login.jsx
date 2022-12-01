@@ -70,6 +70,7 @@ export const Login = () => {
             <h1>
                 Iniciar Sesión
             </h1>
+            <a href="/register"><p>Crear cuenta</p></a>
             <form>
                 <Input type="text" name="email"
                     placeholder="Ingrese su correo electrónico"
