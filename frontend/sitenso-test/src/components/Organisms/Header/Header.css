@@ -1,0 +1,42 @@
+.header{
+    border-bottom: 2px solid #eee;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header a{
+    text-decoration: none;
+    color: #333;
+}
+
+.header-image{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.header-image img{
+    width: 30%;
+}
+
+.header-items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 40px;
+}
+
+.header-items a{
+    margin: 10px;
+}
+
+.header-items svg{
+    width: 50px;
+}
+

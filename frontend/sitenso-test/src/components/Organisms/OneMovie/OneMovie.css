@@ -1,0 +1,25 @@
+.oneMovie{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.oneMovie-img img{
+    width: 320px;
+    height: 380px;
+}
+
+.oneMovie-sections{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.oneMovie-summary{
+    width: 50%;
+}

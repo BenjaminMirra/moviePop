@@ -1,0 +1,12 @@
+.input-label{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+.input-label label{
+    margin-bottom: 8px;
+}
+.inline{
+    display: inline;
+}
