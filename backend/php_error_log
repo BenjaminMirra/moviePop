@@ -1,0 +1,344 @@
+[30-Nov-2022 18:35:15 Europe/Berlin] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in C:\xampp\htdocs\new\routes\services\post.php on line 13
+[30-Nov-2022 18:44:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PostController" not found in C:\xampp\htdocs\new\routes\services\post.php:27
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\routes.php(31): include()
+#1 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#3 {main}
+  thrown in C:\xampp\htdocs\new\routes\services\post.php on line 27
+[30-Nov-2022 18:45:02 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "return", expecting "," or ";" in C:\xampp\htdocs\new\controllers\post.controller.php on line 11
+[30-Nov-2022 18:45:43 Europe/Berlin] PHP Warning:  Undefined variable $tabla in C:\xampp\htdocs\new\routes\services\post.php on line 29
+[30-Nov-2022 18:45:43 Europe/Berlin] PHP Warning:  Undefined variable $POST in C:\xampp\htdocs\new\routes\services\post.php on line 29
+[30-Nov-2022 18:46:09 Europe/Berlin] PHP Warning:  Undefined variable $POST in C:\xampp\htdocs\new\routes\services\post.php on line 29
+[30-Nov-2022 19:06:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "data" in C:\xampp\htdocs\new\models\post.model.php:28
+Stack trace:
+#0 C:\xampp\htdocs\new\controllers\post.controller.php(9): PostModel::postData('users', Array)
+#1 C:\xampp\htdocs\new\routes\services\post.php(29): PostController::postData('users', Array)
+#2 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\new\models\post.model.php on line 28
+[30-Nov-2022 19:11:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetController" not found in C:\xampp\htdocs\new\controllers\post.controller.php:11
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(29): PostController::postData('users', Array)
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 11
+[30-Nov-2022 19:20:24 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "}", expecting "," or ";" in C:\xampp\htdocs\new\routes\services\put.php on line 10
+[30-Nov-2022 19:24:08 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: parse_str() expects exactly 2 arguments, 1 given in C:\xampp\htdocs\new\routes\services\put.php:8
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\put.php(8): parse_str('---------------...')
+#1 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\routes\services\put.php on line 8
+[30-Nov-2022 19:25:04 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "echo" in C:\xampp\htdocs\new\routes\services\put.php on line 9
+[30-Nov-2022 19:34:56 Europe/Berlin] PHP Warning:  Undefined variable $responser in C:\xampp\htdocs\new\routes\services\put.php on line 37
+[30-Nov-2022 19:34:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function putData() on null in C:\xampp\htdocs\new\routes\services\put.php:37
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\routes.php(34): include()
+#1 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#3 {main}
+  thrown in C:\xampp\htdocs\new\routes\services\put.php on line 37
+[30-Nov-2022 19:40:09 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "Connection" in C:\xampp\htdocs\new\models\put.model.php:25
+Stack trace:
+#0 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 25
+[30-Nov-2022 19:40:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "Connection" in C:\xampp\htdocs\new\models\put.model.php:20
+Stack trace:
+#0 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 20
+[30-Nov-2022 19:40:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UPADTE users SET email = 'nico@gmail.com' WHERE id_user = '7'' at line 1 in C:\xampp\htdocs\new\models\put.model.php:30
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(30): PDOStatement->execute()
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '7', 'id_user')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 30
+[30-Nov-2022 19:43:44 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UPADTE users SET email = 'nico@gmail.com' WHERE id_user = '7'' at line 1 in C:\xampp\htdocs\new\models\put.model.php:30
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(30): PDOStatement->execute()
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\services\put.php(35): PutController::putData('users', Array, '7', 'id_user')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 30
+[30-Nov-2022 19:44:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UPADTE users SET email = 'nico@gmail.com' WHERE id_user = '7'' at line 1 in C:\xampp\htdocs\new\models\put.model.php:30
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(30): PDOStatement->execute()
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\services\put.php(33): PutController::putData('users', Array, '7', 'id_user')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 30
+[30-Nov-2022 19:44:33 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UPADTE users SET email = 'nico@gmail.com',password = 'hola123' WHERE id_user ...' at line 1 in C:\xampp\htdocs\new\models\put.model.php:30
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(30): PDOStatement->execute()
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\services\put.php(33): PutController::putData('users', Array, '7', 'id_user')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 30
+[30-Nov-2022 22:15:13 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_use' in 'where clause' in C:\xampp\htdocs\new\models\put.model.php:30
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(30): PDOStatement->execute()
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_use')
+#2 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '7', 'id_use')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 30
+[30-Nov-2022 22:16:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_use' in 'where clause' in C:\xampp\htdocs\new\models\put.model.php:30
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(30): PDOStatement->execute()
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '74', 'id_use')
+#2 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '74', 'id_use')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\put.model.php on line 30
+[30-Nov-2022 22:21:27 Europe/Berlin] PHP Warning:  Undefined variable $linkTo in C:\xampp\htdocs\new\models\put.model.php on line 13
+[30-Nov-2022 22:21:27 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function GetModel::getDataFilter(), 7 passed in C:\xampp\htdocs\new\models\put.model.php on line 13 and exactly 8 expected in C:\xampp\htdocs\new\models\get.model.php:47
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(13): GetModel::getDataFilter('users', 'id_use', NULL, NULL, NULL, NULL, NULL)
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '74', 'id_use')
+#2 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '74', 'id_use')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\get.model.php on line 47
+[30-Nov-2022 22:22:40 Europe/Berlin] PHP Warning:  Undefined variable $linkTo in C:\xampp\htdocs\new\models\put.model.php on line 13
+[30-Nov-2022 22:22:40 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function GetModel::getDataFilter(), 7 passed in C:\xampp\htdocs\new\models\put.model.php on line 13 and exactly 8 expected in C:\xampp\htdocs\new\models\get.model.php:47
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(13): GetModel::getDataFilter('users', 'id_use', NULL, NULL, NULL, NULL, NULL)
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_use')
+#2 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '7', 'id_use')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\get.model.php on line 47
+[30-Nov-2022 22:22:43 Europe/Berlin] PHP Warning:  Undefined variable $linkTo in C:\xampp\htdocs\new\models\put.model.php on line 13
+[30-Nov-2022 22:22:43 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function GetModel::getDataFilter(), 7 passed in C:\xampp\htdocs\new\models\put.model.php on line 13 and exactly 8 expected in C:\xampp\htdocs\new\models\get.model.php:47
+Stack trace:
+#0 C:\xampp\htdocs\new\models\put.model.php(13): GetModel::getDataFilter('users', 'id_user', NULL, NULL, NULL, NULL, NULL)
+#1 C:\xampp\htdocs\new\controllers\put.controller.php(9): PutModel::putData('users', Array, '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\services\put.php(37): PutController::putData('users', Array, '7', 'id_user')
+#3 C:\xampp\htdocs\new\routes\routes.php(34): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\models\get.model.php on line 47
+[30-Nov-2022 22:32:18 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DeleteController::deleteData(), 3 passed in C:\xampp\htdocs\new\routes\services\delete.php on line 24 and exactly 4 expected in C:\xampp\htdocs\new\controllers\delete.controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\delete.php(24): DeleteController::deleteData('users', '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\routes.php(37): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\delete.controller.php on line 8
+[30-Nov-2022 22:34:16 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DeleteController::deleteData(), 3 passed in C:\xampp\htdocs\new\routes\services\delete.php on line 24 and exactly 4 expected in C:\xampp\htdocs\new\controllers\delete.controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\delete.php(24): DeleteController::deleteData('users', '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\routes.php(37): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\delete.controller.php on line 8
+[30-Nov-2022 22:34:26 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DeleteController::deleteData(), 3 passed in C:\xampp\htdocs\new\routes\services\delete.php on line 24 and exactly 4 expected in C:\xampp\htdocs\new\controllers\delete.controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\delete.php(24): DeleteController::deleteData('users', '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\routes.php(37): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\delete.controller.php on line 8
+[30-Nov-2022 22:34:44 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DeleteController::deleteData(), 3 passed in C:\xampp\htdocs\new\routes\services\delete.php on line 24 and exactly 4 expected in C:\xampp\htdocs\new\controllers\delete.controller.php:8
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\delete.php(24): DeleteController::deleteData('users', '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\routes.php(37): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\delete.controller.php on line 8
+[30-Nov-2022 22:35:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "GetModel" not found in C:\xampp\htdocs\new\models\delete.model.php:13
+Stack trace:
+#0 C:\xampp\htdocs\new\controllers\delete.controller.php(9): DeleteModel::deleteData('users', '7', 'id_user')
+#1 C:\xampp\htdocs\new\routes\services\delete.php(24): DeleteController::deleteData('users', '7', 'id_user')
+#2 C:\xampp\htdocs\new\routes\routes.php(37): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#5 {main}
+  thrown in C:\xampp\htdocs\new\models\delete.model.php on line 13
+[30-Nov-2022 22:48:17 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "return", expecting "," or ";" in C:\xampp\htdocs\new\controllers\post.controller.php on line 24
+[30-Nov-2022 22:48:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method PostModel::postRegister() in C:\xampp\htdocs\new\controllers\post.controller.php:27
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(35): PostController::postRegister('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 27
+[30-Nov-2022 23:04:05 Europe/Berlin] PHP Warning:  Undefined array key "register" in C:\xampp\htdocs\new\routes\services\post.php on line 39
+[30-Nov-2022 23:04:29 Europe/Berlin] PHP Warning:  Undefined array key "register" in C:\xampp\htdocs\new\routes\services\post.php on line 39
+[30-Nov-2022 23:05:55 Europe/Berlin] PHP Warning:  Undefined array key "register" in C:\xampp\htdocs\new\routes\services\post.php on line 39
+[30-Nov-2022 23:06:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function r() in C:\xampp\htdocs\new\controllers\post.controller.php:41
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 41
+[30-Nov-2022 23:10:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "suffix" in C:\xampp\htdocs\new\controllers\post.controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 45
+[30-Nov-2022 23:13:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "suffix" in C:\xampp\htdocs\new\controllers\post.controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 45
+[30-Nov-2022 23:14:04 Europe/Berlin] PHP Warning:  Attempt to read property "password_user" on array in C:\xampp\htdocs\new\controllers\post.controller.php on line 45
+[30-Nov-2022 23:14:04 Europe/Berlin] PHP Warning:  Undefined variable $json in C:\xampp\htdocs\new\controllers\post.controller.php on line 86
+[30-Nov-2022 23:14:04 Europe/Berlin] PHP Warning:  Undefined variable $json in C:\xampp\htdocs\new\controllers\post.controller.php on line 86
+[30-Nov-2022 23:14:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\new\controllers\post.controller.php on line 86
+[30-Nov-2022 23:14:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "suffix" in C:\xampp\htdocs\new\controllers\post.controller.php:54
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 54
+[30-Nov-2022 23:14:55 Europe/Berlin] PHP Warning:  Undefined variable $json in C:\xampp\htdocs\new\controllers\post.controller.php on line 86
+[30-Nov-2022 23:14:55 Europe/Berlin] PHP Warning:  Undefined variable $json in C:\xampp\htdocs\new\controllers\post.controller.php on line 86
+[30-Nov-2022 23:14:55 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\new\controllers\post.controller.php on line 86
+[30-Nov-2022 23:14:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "suffix" in C:\xampp\htdocs\new\controllers\post.controller.php:54
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 54
+[30-Nov-2022 23:16:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "suffix" in C:\xampp\htdocs\new\controllers\post.controller.php:54
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 54
+[01-Dec-2022 03:27:36 Europe/Berlin] PHP Warning:  require_once(models/connection.php_): Failed to open stream: No such file or directory in C:\xampp\htdocs\new\controllers\post.controller.php on line 4
+[01-Dec-2022 03:27:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'models/connection.php_' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\new\controllers\post.controller.php:4
+Stack trace:
+#0 C:\xampp\htdocs\new\routes\services\post.php(3): require_once()
+#1 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#4 {main}
+  thrown in C:\xampp\htdocs\new\controllers\post.controller.php on line 4
+[01-Dec-2022 03:27:59 Europe/Berlin] PHP Warning:  Undefined variable $reponse in C:\xampp\htdocs\new\controllers\post.controller.php on line 49
+[01-Dec-2022 03:27:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\new\controllers\post.controller.php on line 49
+[01-Dec-2022 03:27:59 Europe/Berlin] PHP Warning:  Attempt to read property "id_user" on null in C:\xampp\htdocs\new\controllers\post.controller.php on line 49
+[01-Dec-2022 03:27:59 Europe/Berlin] PHP Warning:  Undefined variable $reponse in C:\xampp\htdocs\new\controllers\post.controller.php on line 49
+[01-Dec-2022 03:27:59 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\new\controllers\post.controller.php on line 49
+[01-Dec-2022 03:27:59 Europe/Berlin] PHP Warning:  Attempt to read property "email_user" on null in C:\xampp\htdocs\new\controllers\post.controller.php on line 49
+[01-Dec-2022 03:33:16 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Firebase\JWT\JWT::encode(), 2 passed in C:\xampp\htdocs\new\models\connection.php on line 88 and at least 3 expected in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php:183
+Stack trace:
+#0 C:\xampp\htdocs\new\models\connection.php(88): Firebase\JWT\JWT::encode(Array, 'n12o3402dadjjqw...')
+#1 C:\xampp\htdocs\new\controllers\post.controller.php(49): Connection::jwt(14, 'tester@mail.com')
+#2 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#3 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php on line 183
+[01-Dec-2022 03:38:11 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Firebase\JWT\JWT::sign(): Argument #3 ($alg) must be of type string, null given, called in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php on line 202 and defined in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php:220
+Stack trace:
+#0 C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php(202): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', 'n12o3402dadjjqw...', NULL)
+#1 C:\xampp\htdocs\new\models\connection.php(87): Firebase\JWT\JWT::encode(Array, 'n12o3402dadjjqw...')
+#2 C:\xampp\htdocs\new\controllers\post.controller.php(49): Connection::jwt(14, 'tester@mail.com')
+#3 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#4 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#7 {main}
+  thrown in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php on line 220
+[01-Dec-2022 03:38:25 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Firebase\JWT\JWT::encode(): Argument #3 ($alg) must be of type string, null given, called in C:\xampp\htdocs\new\models\connection.php on line 87 and defined in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php:183
+Stack trace:
+#0 C:\xampp\htdocs\new\models\connection.php(87): Firebase\JWT\JWT::encode(Array, 'n12o3402dadjjqw...', NULL)
+#1 C:\xampp\htdocs\new\controllers\post.controller.php(49): Connection::jwt(14, 'tester@mail.com')
+#2 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#3 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#6 {main}
+  thrown in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php on line 183
+[01-Dec-2022 03:38:37 Europe/Berlin] PHP Fatal error:  Uncaught DomainException: Algorithm not supported in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php:226
+Stack trace:
+#0 C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php(202): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', 'n12o3402dadjjqw...', '')
+#1 C:\xampp\htdocs\new\models\connection.php(87): Firebase\JWT\JWT::encode(Array, 'n12o3402dadjjqw...', '')
+#2 C:\xampp\htdocs\new\controllers\post.controller.php(49): Connection::jwt(14, 'tester@mail.com')
+#3 C:\xampp\htdocs\new\routes\services\post.php(43): PostController::postLogin('users', Array, 'user')
+#4 C:\xampp\htdocs\new\routes\routes.php(31): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\new\controllers\routes.controller.php(10): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\new\index.php(20): RoutesController->index()
+#7 {main}
+  thrown in C:\xampp\htdocs\new\vendor\firebase\php-jwt\src\JWT.php on line 226
+[01-Dec-2022 03:46:22 Europe/Berlin] PHP Warning:  Undefined variable $tabla in C:\xampp\htdocs\new\controllers\post.controller.php on line 64
+[01-Dec-2022 04:29:41 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:29:41 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:30:24 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:30:24 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:31:12 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:31:12 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:31:46 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:31:46 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:32:22 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:32:22 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:32:59 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:32:59 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:33:36 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:33:36 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:33:47 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:33:47 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:35:01 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:35:53 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
+[01-Dec-2022 04:36:47 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\new\models\connection.php on line 50
+[01-Dec-2022 04:36:47 Europe/Berlin] PHP Warning:  Undefined array key "email_user" in C:\xampp\htdocs\new\controllers\post.controller.php on line 44
