@@ -19,12 +19,12 @@ export const OneMovie = () => {
     }, [title]);
 
     function removeTags(str) {
-        if ((str===null) || (str===''))
+        if ((str === null) || (str === ''))
             return false;
         else
             str = str.toString();
-              
-        return str.replace( /(<([^>]+)>)/ig, '');
+
+        return str.replace(/(<([^>]+)>)/ig, '');
     }
 
     return (
@@ -37,12 +37,12 @@ export const OneMovie = () => {
                     <h1>{movieData.name}</h1>
                     <div className='oneMovie-sections'>
                         <h4>
-                            Lenguaje:  
+                            Lenguaje:
                             <span>{` ${movieData.language}`}</span>
                         </h4>
                         <h4>
-                            Géneros: 
-                            <span>{`${movieData.genres.map(item=>` ${item}`)}`}</span>
+                            Géneros:
+                            <span>{`${movieData.genres.map(item => ` ${item}`)}`}</span>
                         </h4>
                         <h4>
                             Fecha de Estreno: <span>{` ${movieData.ended}`}</span>

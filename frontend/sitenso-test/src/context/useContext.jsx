@@ -7,6 +7,7 @@ export const FavoritosContext = createContext();
 const FavoritosContextProvider = ({ children }) => {
 
     const [favoritos, setFavoritos] = useState([]);
+    const [logged, isLogged] = useState(false);
 
     const cambiarFavoritos = (item) => {
         setFavoritos(item)
@@ -16,7 +17,7 @@ const FavoritosContextProvider = ({ children }) => {
         <FavoritosContext.Provider 
             value={{
                 favoritos,
-                cambiarFavoritos
+                cambiarFavoritos,
             }}
         >
             {children}

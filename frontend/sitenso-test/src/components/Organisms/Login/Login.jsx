@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Input } from '../../Atoms/Input/Input';
 import { Button } from '../../Atoms/Button/Button';
-import { useNavigate } from "react-router-dom";
 import './Login.css'
 
-const URL_LOGIN = "http://localhost/loginnew/post.php";
+
+const URL_LOGIN = "http://localhost/new/users?login=true&suffix=user";
 
 export const Login = () => {
 
     const [formValues, setFormValues] = useState({});
-    const [message, setMessage] = useState("");
-    const navigate = useNavigate();
+    const [error, setError] = useState(false);
+    const [message, setMessage] = useState("")
 
     const handleChange = () => (event) => {
         const { value, name } = event.target;
@@ -23,24 +23,37 @@ export const Login = () => {
         formdata.append("email", email);
         formdata.append("password", password);
 
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+        var urlencoded = new URLSearchParams();
+        urlencoded.append("email_user", email);
+        urlencoded.append("password_user", password);
+
         var requestOptions = {
-            method: 'GET',
-            //body: formdata,
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
             redirect: 'follow'
         };
-        console.log("email:" + email);
+
         fetch(url, requestOptions)
             .then(response => response.text())
             .then(result => {
-                JSON.parse(result).map((item) => {
-                    if (item.email === email && item.password === password) {
-                        navigate("/")
-                    } else {
-                        setMessage("El email o la contraseña no coinciden")
-                    }
+                let aux = JSON.parse(result);
+                if(aux && aux.status !== 200){
+                    setError(true);
+                    setMessage("Hubo un error, intente nuevamente")
+                    return null;
                 }
-
-                )
+                if(aux.result[0].token_user){
+                    localStorage.setItem(
+                        "jwt",
+                        JSON.stringify(aux.result[0].token_user)
+                    );
+                }
+                window.location.pathname = "/";
+                    
             })
             .catch(error => console.log('error', error));
 
@@ -63,9 +76,11 @@ export const Login = () => {
                     onChange={handleChange()} />
                 <Input type="password" name="password" placeholder="Ingrese su contraseña"
                     onChange={handleChange()} />
-                <Button label="Registrarse" onClick={handleLogin} />
+                <Button label="Iniciar Sesión" onClick={handleLogin} />
             </form>
-            {message !== "" ? message : ""}
+            <div className="errorContainerLogin">
+            {error ? <p>{message}</p> : ""}
+            </div>
         </div>
     )
 }
