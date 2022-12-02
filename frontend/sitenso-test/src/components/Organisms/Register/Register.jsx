@@ -21,8 +21,6 @@ export const Register = () => {
     useEffect(() => {
         if (error) {
             console.log(error);
-        } else {
-            console.log("nada");
         }
     }, [error])
 
@@ -32,7 +30,6 @@ export const Register = () => {
     }
 
     const firstValidation = (data) => {
-        console.log(dataForm);
         if (data.email === " ") {
             return true
         } else if (data.password === " ") {
@@ -45,7 +42,6 @@ export const Register = () => {
     }
 
     const sendData = async (url, email, password) => {
-        console.log(dataForm);
         setError(false)
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -87,7 +83,7 @@ export const Register = () => {
                         }, [3000])
                     }
                 })
-                .catch(error => console.log('error', error));
+                .catch(error => console.log( error));
         }
 
 

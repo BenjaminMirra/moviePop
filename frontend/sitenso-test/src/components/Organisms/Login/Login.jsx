@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Input } from '../../Atoms/Input/Input';
 import { Button } from '../../Atoms/Button/Button';
 import './Login.css'
@@ -41,19 +41,27 @@ export const Login = () => {
             .then(response => response.text())
             .then(result => {
                 let aux = JSON.parse(result);
-                if(aux && aux.status !== 200){
+                if (aux && aux.status !== 200) {
                     setError(true);
                     setMessage("Hubo un error, intente nuevamente")
                     return null;
                 }
-                if(aux.result[0].token_user){
+                if (aux.result[0].token_user) {
+                    console.log(aux);
                     localStorage.setItem(
                         "jwt",
                         JSON.stringify(aux.result[0].token_user)
                     );
+                    localStorage.setItem(
+                        "userData",
+                        JSON.stringify({
+                            id: aux.result[0].id_user,
+                            email: aux.result[0].email_user,
+                        })
+                    )
                 }
                 window.location.pathname = "/";
-                    
+
             })
             .catch(error => console.log('error', error));
 
@@ -61,7 +69,6 @@ export const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        console.log(formValues.email, formValues.password)
         sendData(URL_LOGIN, formValues.email, formValues.password)
     }
 
@@ -80,7 +87,7 @@ export const Login = () => {
                 <Button label="Iniciar Sesión" onClick={handleLogin} />
             </form>
             <div className="errorContainerLogin">
-            {error ? <p>{message}</p> : ""}
+                {error ? <p>{message}</p> : ""}
             </div>
         </div>
     )

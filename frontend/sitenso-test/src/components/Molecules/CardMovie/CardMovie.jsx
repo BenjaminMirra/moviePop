@@ -1,47 +1,81 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './CardMovie.css'
 import {
-    LazyLoadImage
+    LazyLoadComponent,
 } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { FavoritosContext } from '../../../context/useContext';
+import NotLikedStar from '../../Utils/icons/bEmptyHeart.svg';
+import LikedStar from '../../Utils/icons/favorite.svg';
 
-export const CardMovie = ({ title, img }) => {
 
-    const [favorite, setFavorite] = useState([]);
-    const [searchTerm, setSearchTerm] = useState("");
+const URL_API = "http://localhost/new/favorites";
+const URL_API_DELETE = "http://localhost/new/favorites?nameId=id_movie_favorite&id="
 
-    const handleFavorite = (title) => {
-        if (favorite.length > 0) {
-            setFavorite(prevData => [...prevData, title])
+export const CardMovie = ({ id, title, img, likedMovies }) => {
+
+    const [liked, setLiked] = useState(false);
+    const handleFavorite = (movieId) => {
+        if (!JSON.parse(localStorage.getItem("userData"))) {
+            window.location.pathname = "/login";
+        }
+        if (!liked) {
+            let myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+            let urlencoded = new URLSearchParams();
+            urlencoded.append("id_user_favorite", JSON.parse(localStorage.getItem("userData")).id);
+            urlencoded.append("id_movie_favorite", id);
+
+            let requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: urlencoded,
+                redirect: 'follow'
+            };
+
+            fetch(URL_API, requestOptions)
+                .then((res) => {
+                    return setLiked(true);
+                })
+                .catch((err) => console.log(err));
         } else {
-            setFavorite(title);
-        }
-        console.log(favorite);
-    }
+            let requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+            };
 
-    const addToFavorite = (id) => {
-        if (!favorite.includes(id)) {
-            setFavorite(favorite.concat(id));
-            console.log(id)
+            fetch(`${URL_API_DELETE}${id}`, requestOptions)
+                .then(res => {
+                    return setLiked(false);
+                })
+                .catch(err => console.log(err));
         }
     }
+    const user_id = JSON.parse(localStorage.getItem("userData")).id
 
-    const removeFavorite = (id) => {
-        let index = favorite.indexOf(id);
-        console.log(index);
-        let temp = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
-        setFavorite(temp);
-    }
+    useEffect(() => {
+        likedMovies.map((item) => {
+            if (item.id_user_favorite === user_id && item.id_movie_favorite === id) {
+                setLiked(true)
+            }
+        })
+    }, [likedMovies, user_id, id])
 
     return (
+        <>
+        <LazyLoadComponent effect="blur">
         <div className="cardMovie">
             <div className="cardMovie-img">
-                <LazyLoadImage effect="blur" width={'100%'} src={img} alt={title} />
+                <a href={`/movie/${id}`}><img src={img} alt={title} /></a>
+                <div className="fav" onClick={() => handleFavorite(id)}>
+                    {liked ? <img src={LikedStar} alt="liked" /> : <img alt="notLiked" src={NotLikedStar}/>}
+                </div>
             </div>
             <div className="cardMovie-title">
                 <h2>{title}</h2>
             </div>
         </div>
+        </LazyLoadComponent>
+        </>
     )
 }
