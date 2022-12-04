@@ -22,7 +22,7 @@ In the project, we used:
 
 ### npm i --save @fortawesome/fontawesome-svg-core
 ### npm install --save @fortawesome/free-solid-svg-icons
-###npm install --save @fortawesome/react-fontawesome
+### npm install --save @fortawesome/react-fontawesome
 
 In the project directory, you can run:
 
