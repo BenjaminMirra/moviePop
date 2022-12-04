@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Sitenso from '../../Utils/Images/sitenso.svg'
 import './Header.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseChimney, faStar, faMagnifyingGlass, faRightFromBracket, faRightToBracket } from '@fortawesome/free-solid-svg-icons'
+import { DesktopHeader } from './Versions/DesktopHeader'
+import { MobileHeader } from './Versions/MobileHeader'
 
 export const Header = () => {
 
@@ -14,33 +13,37 @@ export const Header = () => {
     } else {
       isLogged(false)
     }
-  }, [logged])
+  }, [isLogged])
 
   const handleLogout = () => {
     localStorage.removeItem("jwt")
     localStorage.removeItem("userData")
   }
 
-  return (
-    <div className="header">
-      <div className="header-image">
-        <img src={Sitenso} alt="logo" />
-      </div>
-      <div className="header-items">
-        {logged ? (
-          <>
-            <a href="/"><FontAwesomeIcon icon={faHouseChimney} /></a>
-            <a href="/movies"><FontAwesomeIcon icon={faMagnifyingGlass} /></a>
-            <a href="/favorites"><FontAwesomeIcon icon={faStar} /></a>
-            <a href="/"><FontAwesomeIcon icon={faRightFromBracket} onClick={handleLogout} /></a>
-          </>) : (
-          <>
-            <a href="/"><FontAwesomeIcon icon={faHouseChimney} /></a>
-            <a href="/movies"><FontAwesomeIcon icon={faMagnifyingGlass} /></a>
-            <a href="/login"><FontAwesomeIcon icon={faRightToBracket} /></a>
-          </>)}
+  const [headerDisplayed, setHeaderDisplayed] = useState(<><DesktopHeader logout={logged} isLogged={isLogged} handleLogout={handleLogout} /></>)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-      </div>
-    </div>
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [windowWidth]);
+
+  useEffect(() => {
+    if (windowWidth < 768) {
+      setHeaderDisplayed(<MobileHeader logged={logged} isLogged={isLogged} handleLogout={handleLogout} />)
+    }
+    else if (windowWidth >= 768) {
+      setHeaderDisplayed(<DesktopHeader logged={logged} isLogged={isLogged} handleLogout={handleLogout} />)
+
+    }
+
+  }, [windowWidth, logged, isLogged]);
+  return (
+    <>
+      {headerDisplayed}
+    </>
   )
 }

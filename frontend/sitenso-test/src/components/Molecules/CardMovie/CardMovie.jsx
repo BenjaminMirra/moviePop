@@ -24,7 +24,7 @@ export const CardMovie = ({ id, title, img, likedMovies }) => {
 
             let urlencoded = new URLSearchParams();
             urlencoded.append("id_user_favorite", JSON.parse(localStorage.getItem("userData")).id);
-            urlencoded.append("id_movie_favorite", id);
+            urlencoded.append("id_movie_favorite", movieId);
 
             let requestOptions = {
                 method: 'POST',
@@ -37,7 +37,7 @@ export const CardMovie = ({ id, title, img, likedMovies }) => {
                 .then((res) => {
                     return setLiked(true);
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => {return err});
         } else {
             let requestOptions = {
                 method: 'DELETE',
@@ -48,17 +48,23 @@ export const CardMovie = ({ id, title, img, likedMovies }) => {
                 .then(res => {
                     return setLiked(false);
                 })
-                .catch(err => console.log(err));
+                .catch(err => {return err});
         }
     }
-    const user_id = JSON.parse(localStorage.getItem("userData")).id
+    let user_id; 
+    if(JSON.parse(localStorage.getItem("userData"))){
+        user_id = JSON.parse(localStorage.getItem("userData")).id;
+    }
 
     useEffect(() => {
-        likedMovies.map((item) => {
-            if (item.id_user_favorite === user_id && item.id_movie_favorite === id) {
-                setLiked(true)
-            }
-        })
+        if(user_id){
+            likedMovies.map((item) => {
+                if (item.id_user_favorite === user_id && item.id_movie_favorite === id) {
+                    setLiked(true)
+                }
+            })
+        }
+        
     }, [likedMovies, user_id, id])
 
     return (

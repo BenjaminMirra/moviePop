@@ -19,7 +19,7 @@ export const CommentsMovie = ({ comment, user_id }) => {
     return (
         <div className="commentMovie">
             <p>{userMail}:</p>
-            <p>"{comment}"</p>
+            <p className="commentMovie-comment">"{comment}"</p>
         </div>
     )
 }

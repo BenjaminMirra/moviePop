@@ -47,7 +47,6 @@ export const Login = () => {
                     return null;
                 }
                 if (aux.result[0].token_user) {
-                    console.log(aux);
                     localStorage.setItem(
                         "jwt",
                         JSON.stringify(aux.result[0].token_user)
@@ -63,7 +62,7 @@ export const Login = () => {
                 window.location.pathname = "/";
 
             })
-            .catch(error => console.log('error', error));
+            .catch(error => { return error });
 
     }
 
@@ -74,10 +73,13 @@ export const Login = () => {
 
     return (
         <div className='login'>
-            <h1>
-                Iniciar Sesión
-            </h1>
-            <a href="/register"><p>Crear cuenta</p></a>
+            <div className="login-titles">
+                <h1>
+                    Iniciar Sesión
+                </h1>
+                <p>¿No tienes cuenta?</p>
+                <a href="/register"><p>Crear cuenta</p></a>
+            </div>
             <form>
                 <Input type="text" name="email"
                     placeholder="Ingrese su correo electrónico"

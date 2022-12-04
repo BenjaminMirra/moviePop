@@ -18,12 +18,6 @@ export const Register = () => {
     const [error, setError] = useState(false);
     const [message, setMessage] = useState("");
 
-    useEffect(() => {
-        if (error) {
-            console.log(error);
-        }
-    }, [error])
-
     const handleChange = () => (e) => {
         const { value, name } = e.target;
         setDataForm(prevData => ({ ...prevData, [name]: value }))
@@ -83,7 +77,7 @@ export const Register = () => {
                         }, [3000])
                     }
                 })
-                .catch(error => console.log( error));
+                .catch(error => {return error});
         }
 
 
@@ -96,9 +90,13 @@ export const Register = () => {
     }
     return (
         <div className='register'>
+            <div className="register-titles">
             <h1>
                 Crear Cuenta
             </h1>
+            <p>¿Ya tienes cuenta?</p>
+            <a href="/login"><p>Iniciar Sesión</p></a>
+            </div>
             <form>
                 <Input type="text" name="email"
                     placeholder="Ingrese su correo electrónico"

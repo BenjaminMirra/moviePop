@@ -48,3 +48,12 @@
     color: red;
     font-weight: 500;
 }
+
+.register-titles{
+    display: flex;
+    flex-direction: column;
+}
+
+.register-titles p{
+    margin: 2px;
+}

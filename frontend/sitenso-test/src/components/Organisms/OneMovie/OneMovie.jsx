@@ -54,7 +54,7 @@ export const OneMovie = () => {
 
         fetch(URL_POST_OPINION, requestOptions)
             .then(response => response.text())
-            .catch(error => console.log('error', error));
+            .catch(error => {return error});
     }
 
     useEffect(() => {
@@ -85,35 +85,40 @@ export const OneMovie = () => {
         <>
             {movieData ?
                 (
-                    <div className="peliculaContainer">
-                        <div className="oneMovie">
+                    <>
+                        <div className="peliculaContainer">
+
+                            <div className='oneMovie-information'>
+                                <h1>{movieData.name}</h1>
+                                <div className='oneMovie-genres'>
+                                    <h4>
+                                        Lenguaje:
+                                        <span>{` ${movieData.language}`}</span>
+                                    </h4>
+                                    <h4>
+                                        Géneros:
+                                        <span>{`${movieData.genres.map(item => ` ${item}`)}`}</span>
+                                    </h4>
+                                    <h4>
+                                        Fecha de Estreno: <span>{` ${movieData.ended}`}</span>
+                                    </h4>
+                                </div>
+                                <div className="oneMovie-summary">
+                                    <h2>Sinópsis</h2>
+                                    <p>{removeTags(movieData.summary)}</p>
+                                </div>
+                            </div>
                             <div className="oneMovie-img">
+
                                 <img src={movieData.image.original} alt={movieData.name} />
                             </div>
-                            <h1>{movieData.name}</h1>
-                            <div className='oneMovie-sections'>
-                                <h4>
-                                    Lenguaje:
-                                    <span>{` ${movieData.language}`}</span>
-                                </h4>
-                                <h4>
-                                    Géneros:
-                                    <span>{`${movieData.genres.map(item => ` ${item}`)}`}</span>
-                                </h4>
-                                <h4>
-                                    Fecha de Estreno: <span>{` ${movieData.ended}`}</span>
-                                </h4>
-                            </div>
-                            <div className="oneMovie-summary">
-                                <h1>Sinópsis</h1>
-                                <p>{removeTags(movieData.summary)}</p>
-                            </div>
+
                         </div>
-                        <div className="comments">
+                        <div className="oneMovie-comments">
                             <h1>Comentarios</h1>
                             {commentData ? commentData.map((item) => {
                                 if (movie_id === item.id_movie_comment.toString()) {
-                                        return <CommentsMovie user_id={item.id_user_comment} comment={item.comment} />
+                                    return <CommentsMovie user_id={item.id_user_comment} comment={item.comment} />
                                 }
                             }) : "no anda"}
                             <div className="leaveOpinions">
@@ -122,7 +127,7 @@ export const OneMovie = () => {
                             </div>
                             {alert ? "Opinion enviada" : ""}
                         </div>
-                    </div>
+                    </>
 
                 ) : "Hubo un problema, por favor intente mas tarde."}
         </>
