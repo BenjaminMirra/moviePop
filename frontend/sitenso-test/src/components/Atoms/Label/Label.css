@@ -1,0 +1,10 @@
+
+.label{
+    font-size: 12px;
+    line-height: 14.06px;
+    font-weight: bold;
+}
+.is-required::after{
+  content: ' *';
+  color: red;
+}

@@ -1,0 +1,42 @@
+.DesktopHeader{
+    border-bottom: 2px solid #eee;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.DesktopHeader a{
+    text-decoration: none;
+    color: #333;
+}
+
+.DesktopHeader-image{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.DesktopHeader-image img{
+    width: 30%;
+}
+
+.DesktopHeader-items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 40px;
+}
+
+.DesktopHeader-items a{
+    margin: 10px;
+}
+
+.DesktopHeader-items svg{
+    width: 50px;
+}
+

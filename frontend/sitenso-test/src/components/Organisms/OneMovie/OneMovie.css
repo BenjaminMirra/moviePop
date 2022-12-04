@@ -1,0 +1,109 @@
+.peliculaContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.oneMovie-img{
+    width: 50%;
+}
+
+.oneMovie-img img{
+    width: 70%;
+    border-radius: 30px;
+}
+
+.oneMovie-information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.oneMovie-genres{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.oneMovie-summary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.oneMovie-summary p{
+    width: 80%;
+}
+
+.oneMovie-comments{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.oneMovie-comments .leaveOpinions{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.oneMovie-comments textarea{
+    width: 80%;
+    padding: 20px;
+}
+
+.oneMovie-comments button{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0098cb;
+    color: #fff ;
+    border-radius: 3px;
+    border: 0;
+    height: 50px;
+}
+
+.oneMovie-comments button:hover{
+    background-color: #00b8eb;
+    }
+
+
+@media (max-width: 768px){
+    .peliculaContainer{
+        flex-direction: column-reverse;
+    }
+    .oneMovie-img{
+        width: 100%;
+    }
+    .oneMovie-img img{
+        width: 50%;
+    }
+    .oneMovie-comments .leaveOpinions{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .oneMovie-comments textarea{
+        width: 60%;
+    }
+
+    .oneMovie-comments .leaveOpinions button{
+        width: 60%;
+        margin-top: 30px;
+    }
+
+}
