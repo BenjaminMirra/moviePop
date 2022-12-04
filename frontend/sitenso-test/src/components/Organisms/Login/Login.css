@@ -48,3 +48,12 @@
     color: red;
     font-weight: 500;
 }
+
+.login-titles{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-titles p{
+    margin: 2px;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Input } from '../../Atoms/Input/Input';
 import { Button } from '../../Atoms/Button/Button';
 import './Login.css'
@@ -41,35 +41,45 @@ export const Login = () => {
             .then(response => response.text())
             .then(result => {
                 let aux = JSON.parse(result);
-                if(aux && aux.status !== 200){
+                if (aux && aux.status !== 200) {
                     setError(true);
                     setMessage("Hubo un error, intente nuevamente")
                     return null;
                 }
-                if(aux.result[0].token_user){
+                if (aux.result[0].token_user) {
                     localStorage.setItem(
                         "jwt",
                         JSON.stringify(aux.result[0].token_user)
                     );
+                    localStorage.setItem(
+                        "userData",
+                        JSON.stringify({
+                            id: aux.result[0].id_user,
+                            email: aux.result[0].email_user,
+                        })
+                    )
                 }
                 window.location.pathname = "/";
-                    
+
             })
-            .catch(error => console.log('error', error));
+            .catch(error => { return error });
 
     }
 
     const handleLogin = (e) => {
         e.preventDefault()
-        console.log(formValues.email, formValues.password)
         sendData(URL_LOGIN, formValues.email, formValues.password)
     }
 
     return (
         <div className='login'>
-            <h1>
-                Iniciar Sesión
-            </h1>
+            <div className="login-titles">
+                <h1>
+                    Iniciar Sesión
+                </h1>
+                <p>¿No tienes cuenta?</p>
+                <a href="/register"><p>Crear cuenta</p></a>
+            </div>
             <form>
                 <Input type="text" name="email"
                     placeholder="Ingrese su correo electrónico"
@@ -79,7 +89,7 @@ export const Login = () => {
                 <Button label="Iniciar Sesión" onClick={handleLogin} />
             </form>
             <div className="errorContainerLogin">
-            {error ? <p>{message}</p> : ""}
+                {error ? <p>{message}</p> : ""}
             </div>
         </div>
     )

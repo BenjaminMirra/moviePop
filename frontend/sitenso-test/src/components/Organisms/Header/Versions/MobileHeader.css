@@ -1,0 +1,38 @@
+.MobileHeader{
+    border-bottom: 2px solid #eee;
+    padding:20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
+
+.MobileHeader a{
+    text-decoration: none;
+    color: #333;
+}
+
+.MobileHeader-image{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.MobileHeader-image img{
+    width: 142px;
+    height: 35;
+}
+
+.MobileHeader-items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+
+.MobileHeader-items svg{
+    width: 50px;
+}
+

@@ -42,3 +42,18 @@
 .register form button:hover{
     background-color: #00b8eb;
 }
+
+.errorContainerRegister{
+    margin-bottom: 10px;
+    color: red;
+    font-weight: 500;
+}
+
+.register-titles{
+    display: flex;
+    flex-direction: column;
+}
+
+.register-titles p{
+    margin: 2px;
+}

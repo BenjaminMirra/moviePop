@@ -38,3 +38,13 @@
     border: 1px solid #eee;
     margin: 20px;
 }
+
+.loadingComponent{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: #eee
+}

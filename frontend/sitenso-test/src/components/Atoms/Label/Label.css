@@ -2,7 +2,6 @@
 .label{
     font-size: 12px;
     line-height: 14.06px;
-    color:var(--color-tertiary);
     font-weight: bold;
 }
 .is-required::after{
