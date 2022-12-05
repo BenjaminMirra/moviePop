@@ -8,14 +8,29 @@ const URL_LOGIN = "http://localhost/new/users?login=true&suffix=user";
 
 export const Login = () => {
 
-    const [formValues, setFormValues] = useState({});
+    const [formValues, setFormValues] = useState({
+        email: "",
+        password: ""
+    });
     const [error, setError] = useState(false);
     const [message, setMessage] = useState("")
 
     const handleChange = () => (event) => {
+        console.log(event);
         const { value, name } = event.target;
         setFormValues({ ...formValues, [name]: value });
     };
+
+    const firstValidation = (email,pass) =>{
+        console.log(email,pass);
+        if(email === ""){
+            return null
+        }else if(pass === ""){
+            return false
+        }else{
+            return true
+        }
+    }
 
     const sendData = async (url, email, password) => {
 
@@ -36,14 +51,14 @@ export const Login = () => {
             body: urlencoded,
             redirect: 'follow'
         };
-
-        fetch(url, requestOptions)
+        if(firstValidation(email, password)){
+            fetch(url, requestOptions)
             .then(response => response.text())
             .then(result => {
                 let aux = JSON.parse(result);
                 if (aux && aux.status !== 200) {
                     setError(true);
-                    setMessage("Hubo un error, intente nuevamente")
+                    setMessage("El correo electrónico o la contraseña que introdujiste no son correctas.")
                     return null;
                 }
                 if (aux.result[0].token_user) {
@@ -58,17 +73,24 @@ export const Login = () => {
                             email: aux.result[0].email_user,
                         })
                     )
+                    window.location.pathname = "/";
                 }
-                window.location.pathname = "/";
-
             })
             .catch(error => { return error });
+        }else if(firstValidation(email, password) === false){
+            setError(true)
+            setMessage("La contraseña no puede estar vacía.")
+        }else if(firstValidation(email, password) === null){
+            setError(true)
+            setMessage("El correo electrónico no puede estar vacío.")
+        }
+        
 
     }
 
     const handleLogin = (e) => {
-        e.preventDefault()
-        sendData(URL_LOGIN, formValues.email, formValues.password)
+        e.preventDefault();
+        sendData(URL_LOGIN, formValues.email, formValues.password)        
     }
 
     return (
@@ -86,10 +108,13 @@ export const Login = () => {
                     onChange={handleChange()} />
                 <Input type="password" name="password" placeholder="Ingrese su contraseña"
                     onChange={handleChange()} />
-                <Button label="Iniciar Sesión" onClick={handleLogin} />
+                <Button label="Iniciar Sesión" onClick={(e) => handleLogin(e)} />
             </form>
-            <div className="errorContainerLogin">
-                {error ? <p>{message}</p> : ""}
+            <div className="messageContainer">
+                {error ? (
+                <div className="errorContainerLogin">
+                <p>{message}</p> 
+                </div>): ""}
             </div>
         </div>
     )

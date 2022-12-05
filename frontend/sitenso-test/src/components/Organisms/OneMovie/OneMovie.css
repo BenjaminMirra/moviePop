@@ -121,10 +121,14 @@
     }
 
     .oneMovie-stars{
-        width: 100%;
+        width: 60%;
         display: flex;
         justify-content: center;
         align-content: center;
+    }
+    .oneMovie-stars img {
+        width: 20px;
+        height: 20px;
     }
 
 }

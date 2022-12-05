@@ -9,13 +9,13 @@ const URL_LOGIN = "http://localhost/new/users?register=true&suffix=user";
 
 export const Register = () => {
 
-    const [formValues, setFormValues] = useState({});
     const [dataForm, setDataForm] = useState({
-        email: " ",
-        password: " ",
-        rePassword: " "
+        email: "",
+        password: "",
+        rePassword: ""
     })
     const [error, setError] = useState(false);
+    const [register, setRegister] = useState(false);
     const [message, setMessage] = useState("");
 
     const handleChange = () => (e) => {
@@ -23,20 +23,23 @@ export const Register = () => {
         setDataForm(prevData => ({ ...prevData, [name]: value }))
     }
 
-    const firstValidation = (data) => {
-        if (data.email === " ") {
-            return true
-        } else if (data.password === " ") {
-            return null
-        } else if (data.rePassword !== " " && data.rePassword !== data.password) {
-            return 0;
+    const firstValidation = (event) => {
+        if (event === "") {
+            return false;
         } else {
-            return false
+            return true;
         }
     }
 
-    const sendData = async (url, email, password) => {
-        setError(false)
+    const secondValidation = (pass, repass) => {
+        if (pass !== repass) {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    const sendData = async (url, email, password, rePassword) => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -50,52 +53,57 @@ export const Register = () => {
             body: urlencoded,
             redirect: 'follow'
         };
-        if (firstValidation(dataForm)) {
+
+        if (!firstValidation(email)) {
+            console.log(email);
             setError(true);
-            setMessage("El corre electrónico no puede estar vacío")
-        } else if (firstValidation(dataForm) === null) {
+            return setMessage("El correo electrónico no puede estar vacío.")
+        } else if (!firstValidation(password)) {
             setError(true);
-            setMessage("La contraseña no puede estar vacía")
-        } else if (firstValidation(dataForm) === 0) {
+            return setMessage("La contraseña no puede estar vacía.")
+        } else if (!firstValidation(rePassword)) {
             setError(true);
-            setMessage("Las contraseñas no coinciden")
+            return setMessage("Por favor, confirme su contraseña.")
+        } else if (!secondValidation(password, rePassword)) {
+            setError(true);
+            return setMessage("Las contraseñas no coinciden.")
         } else {
-            fetch(url, requestOptions)
+            return fetch(url, requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     let aux = JSON.parse(result);
                     if (aux.status !== 200) {
                         setError(true);
-                        setMessage("Hubo un error, intente nuevamente")
+                        setMessage("Hubo un error, intente nuevamente.")
                         return null;
                     }
                     if (aux.status === 200) {
-                        setError(true)
-                        setMessage("Registro realizado.")
+                        setError(false);
+                        setRegister(true)
+                        setMessage("Usuario registrado.")
                         setTimeout(() => {
                             window.location.pathname = "/login";
                         }, [3000])
                     }
                 })
-                .catch(error => {return error});
+                .catch(error => { return error });
         }
-
-
     }
 
     const handleRegister = (e) => {
         e.preventDefault()
-        sendData(URL_LOGIN, dataForm.email, dataForm.password)
-
+        sendData(URL_LOGIN, dataForm.email, dataForm.password, dataForm.rePassword)
+        console.log(dataForm);
     }
+
     return (
         <div className='register'>
             <div className="register-titles">
-            <h1>
-                Crear Cuenta
-            </h1>
-            <p>¿Ya tienes cuenta?</p>
-            <a href="/login"><p>Iniciar Sesión</p></a>
+                <h1>
+                    Crear Cuenta
+                </h1>
+                <p>¿Ya tienes cuenta?</p>
+                <a href="/login"><p>Iniciar Sesión</p></a>
             </div>
             <form>
                 <Input type="text" name="email"
@@ -107,8 +115,20 @@ export const Register = () => {
                     onChange={handleChange()} />
                 <Button label="Registrarse" onClick={handleRegister} />
             </form>
-            <div className="errorContainerRegister">
-                {error ? <p>{message}</p> : ""}
+            <div className="messageContainerRegister">
+                {error ?
+                    (<div className="registerError">
+                        <p>
+                            {message}
+                        </p>
+                    </div>)
+                    : register ?
+                        (<div className="registerMessage">
+                            <p>
+                                {message}
+                            </p>
+                        </div>)
+                        : ""}
             </div>
         </div>
     )

@@ -43,9 +43,13 @@
     background-color: #00b8eb;
 }
 
-.errorContainerRegister{
-    margin-bottom: 10px;
+.registerError{
     color: red;
+    font-weight: 500;
+}
+
+.registerMessage{
+    color: green;
     font-weight: 500;
 }
 
