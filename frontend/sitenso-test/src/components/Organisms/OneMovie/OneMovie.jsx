@@ -121,51 +121,51 @@ export const OneMovie = () => {
                                     ""
                                 ) : stars < 2 ? (
                                     <>
-                                        <img src={Star} />
-                                        <img src={EmptyStar} />
-                                        <img src={EmptyStar} />
-                                        <img src={EmptyStar} />
-                                        <img src={EmptyStar} />
+                                        <img src={Star} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
                                     </>
                                 ) : stars <= 4 ? (
                                     <>
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={EmptyStar} />
-                                        <img src={EmptyStar} />
-                                        <img src={EmptyStar} />
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
                                     </>
                                 ) : stars <= 6 ? (
                                     <>
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={EmptyStar} />
-                                        <img src={EmptyStar} />
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
                                     </>
                                 ) : stars < 9 ? (
                                     <>
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={EmptyStar} />
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
                                     </>
                                 ) : stars <= 9.5 ? (
                                     <>
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={EmptyStar} />
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={EmptyStar} alt=""/>
                                     </>
                                 ) : (
                                     <>
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
-                                        <img src={Star} />
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
+                                        <img src={Star} alt=""/>
                                     </>
                                 )}
                                 </div>
