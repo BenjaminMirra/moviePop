@@ -8,13 +8,27 @@
 }
 
 .oneMovie-img{
+    position: relative;
     width: 50%;
 }
 
-.oneMovie-img img{
+.oneMovie-img .oneMoviePhoto{
     width: 70%;
     border-radius: 30px;
 }
+
+.oneMovie-stars{
+    position: absolute;
+    display: flex;
+    bottom: 15px;
+    right: 75px;
+}
+
+.oneMovie-stars img{
+    width: 30px;
+    height: 30px;
+}
+
 
 .oneMovie-information {
     width: 100%;
@@ -89,7 +103,7 @@
     .oneMovie-img{
         width: 100%;
     }
-    .oneMovie-img img{
+    .oneMovie-img .oneMoviePhoto{
         width: 50%;
     }
     .oneMovie-comments .leaveOpinions{
@@ -104,6 +118,13 @@
     .oneMovie-comments .leaveOpinions button{
         width: 60%;
         margin-top: 30px;
+    }
+
+    .oneMovie-stars{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 
 }

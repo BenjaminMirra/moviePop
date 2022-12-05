@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { CommentsMovie } from '../../Molecules/CommentsMovie/CommentsMovie';
 import { Button } from '../../Atoms/Button/Button';
+import EmptyStar from '../../Utils/icons/emptyStar.svg'
+import Star from '../../Utils/icons/star.svg'
 
 const URL_API = "https://api.tvmaze.com/shows/";
 const URL_DB = "http://localhost/new/comments?select=*";
@@ -18,6 +20,7 @@ export const OneMovie = () => {
     const userId = JSON.parse(localStorage.getItem("userData")).id;
     const [opinionData, setOpinionData] = useState();
     const [alert, setAlert] = useState(false);
+    const [stars, setStars] = useState(0);
 
     const textArea = document.getElementById("textAreaOpinion");
 
@@ -54,7 +57,7 @@ export const OneMovie = () => {
 
         fetch(URL_POST_OPINION, requestOptions)
             .then(response => response.text())
-            .catch(error => {return error});
+            .catch(error => { return error });
     }
 
     useEffect(() => {
@@ -64,6 +67,8 @@ export const OneMovie = () => {
             }, 2000)
         }
         axios.get(`${URL_API}${movie_id}`,).then((data) => {
+            console.log(data.data);
+            setStars(data.data.rating.average)
             setMovieData(data.data);
         });
         axios.get(`${URL_DB}`).then((data) => {
@@ -110,7 +115,60 @@ export const OneMovie = () => {
                             </div>
                             <div className="oneMovie-img">
 
-                                <img src={movieData.image.original} alt={movieData.name} />
+                                <img className="oneMoviePhoto" src={movieData.image.original} alt={movieData.name} />
+                                <div className="oneMovie-stars">
+                                {stars < 1 ? (
+                                    ""
+                                ) : stars < 2 ? (
+                                    <>
+                                        <img src={Star} />
+                                        <img src={EmptyStar} />
+                                        <img src={EmptyStar} />
+                                        <img src={EmptyStar} />
+                                        <img src={EmptyStar} />
+                                    </>
+                                ) : stars <= 4 ? (
+                                    <>
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={EmptyStar} />
+                                        <img src={EmptyStar} />
+                                        <img src={EmptyStar} />
+                                    </>
+                                ) : stars <= 6 ? (
+                                    <>
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={EmptyStar} />
+                                        <img src={EmptyStar} />
+                                    </>
+                                ) : stars < 9 ? (
+                                    <>
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={EmptyStar} />
+                                    </>
+                                ) : stars <= 9.5 ? (
+                                    <>
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={EmptyStar} />
+                                    </>
+                                ) : (
+                                    <>
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                        <img src={Star} />
+                                    </>
+                                )}
+                                </div>
                             </div>
 
                         </div>
