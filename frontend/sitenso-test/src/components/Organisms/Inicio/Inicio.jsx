@@ -5,10 +5,8 @@ import PopCorn from '../../Utils/Images/popCorn.png'
 export const Inicio = () => {
   return (
     <div className="inicio">
-
-        <img src={PopCorn} alt="logo" />
-        <h1>MoviePop!</h1>
-
+      <h1>MoviePop!</h1>
+      <img src={PopCorn} alt="logo" />
     </div>
   )
 }

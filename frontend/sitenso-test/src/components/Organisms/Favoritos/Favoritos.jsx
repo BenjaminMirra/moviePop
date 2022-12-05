@@ -74,7 +74,7 @@ export const Favoritos = ({ likedMovies }) => {
                 :
                 <div className="favoritos-movies">
                     {
-                        message ? favoritos && favoritos.map((movie, idx) => {
+                        favoritos && favoritos.map((movie, idx) => {
                             return (
                                 <CardMovie
                                     key={idx}
@@ -83,7 +83,7 @@ export const Favoritos = ({ likedMovies }) => {
                                     likedMovies={likedMovies}
                                 />
                             )
-                        }) : "Todavía no tienes ningún favorito."
+                        })
                     }
                 </div>
             }

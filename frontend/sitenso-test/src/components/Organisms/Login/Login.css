@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 90vh;
+    background: url("../../Utils/Images/fondoRegisterLogin.webp") no-repeat fixed center;
 }
 
 .login h1{
@@ -32,7 +34,7 @@
 .login form button{
     padding: 10px;
     color: #fff ;
-    background: #0098cb;
+    background: rgb(172,20,205);
     width: 320px;
     margin: 20px auto;
     border-radius: 3px;
@@ -40,7 +42,7 @@
 }
 
 .login form button:hover{
-    background-color: #00b8eb;
+    background-color: rgba(172,20,205,0.8);
 }
 
 .errorContainerLogin{
