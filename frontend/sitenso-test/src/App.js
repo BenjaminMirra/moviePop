@@ -11,7 +11,7 @@ import { OneMovie } from './components/Organisms/OneMovie/OneMovie';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const URL_API_FAV = "http://localhost/new/favorites?select=*"
+const URL_API_FAV = "https://sitensobe.000webhostapp.com/favorites?select=*"
 
 function App() {
 

@@ -8,8 +8,8 @@ import EmptyStar from '../../Utils/icons/emptyStar.svg'
 import Star from '../../Utils/icons/star.svg'
 
 const URL_API = "https://api.tvmaze.com/shows/";
-const URL_DB = "http://localhost/new/comments?select=*";
-const URL_POST_OPINION = "http://localhost/new/comments";
+const URL_DB = "https://sitensobe.000webhostapp.com/comments?select=*";
+const URL_POST_OPINION = "https://sitensobe.000webhostapp.com/comments";
 
 
 export const OneMovie = () => {
@@ -17,7 +17,13 @@ export const OneMovie = () => {
     const { movie_id } = useParams();
     const [movieData, setMovieData] = useState();
     const [commentData, setCommentData] = useState([]);
-    const userId = JSON.parse(localStorage.getItem("userData")).id;
+    const [message, setMessage] = useState(false);
+    let userId;
+    if (JSON.parse(localStorage.getItem("userData"))) {
+        userId = JSON.parse(localStorage.getItem("userData")).id;
+    } else {
+        userId = "";
+    }
     const [opinionData, setOpinionData] = useState();
     const [alert, setAlert] = useState(false);
     const [stars, setStars] = useState(0);
@@ -32,9 +38,15 @@ export const OneMovie = () => {
         if (textArea.value.length < 1) {
 
         } else {
+            if(userId !== ""){
             postOpinion();
             textArea.value = ""
             setAlert(true);
+            setMessage("Opinión enviada.")
+            }else{
+                setAlert(true)
+                setMessage("Debes estar logueado para comentar.")
+            }
         }
 
     }
@@ -67,7 +79,7 @@ export const OneMovie = () => {
             }, 2000)
         }
         axios.get(`${URL_API}${movie_id}`,).then((data) => {
-            console.log(data.data);
+
             setStars(data.data.rating.average)
             setMovieData(data.data);
         });
@@ -117,57 +129,57 @@ export const OneMovie = () => {
 
                                 <img className="oneMoviePhoto" src={movieData.image.original} alt={movieData.name} />
                                 <div className="oneMovie-stars">
-                                {stars < 1 ? (
-                                    ""
-                                ) : stars < 2 ? (
-                                    <>
-                                        <img src={Star} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                    </>
-                                ) : stars <= 4 ? (
-                                    <>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                    </>
-                                ) : stars <= 6 ? (
-                                    <>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                    </>
-                                ) : stars < 9 ? (
-                                    <>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                    </>
-                                ) : stars <= 9.5 ? (
-                                    <>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={EmptyStar} alt=""/>
-                                    </>
-                                ) : (
-                                    <>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                        <img src={Star} alt=""/>
-                                    </>
-                                )}
+                                    {stars < 1 ? (
+                                        ""
+                                    ) : stars < 2 ? (
+                                        <>
+                                            <img src={Star} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                        </>
+                                    ) : stars <= 4 ? (
+                                        <>
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                        </>
+                                    ) : stars <= 6 ? (
+                                        <>
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                        </>
+                                    ) : stars < 9 ? (
+                                        <>
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                        </>
+                                    ) : stars <= 9.5 ? (
+                                        <>
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={EmptyStar} alt="" />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                            <img src={Star} alt="" />
+                                        </>
+                                    )}
                                 </div>
                             </div>
 
@@ -183,7 +195,11 @@ export const OneMovie = () => {
                                 <textarea placeholder='Deja aquí tu opinion' name="" id="textAreaOpinion" cols="30" rows="2" onChange={handleChangeTextArea} />
                                 <Button label="Enviar" onClick={handleOpinion} />
                             </div>
-                            {alert ? "Opinion enviada" : ""}
+                            {alert ? 
+                            <div className="oneMovieMessage">
+                                {message}
+                                </div>
+                            : ""}
                         </div>
                     </>
 

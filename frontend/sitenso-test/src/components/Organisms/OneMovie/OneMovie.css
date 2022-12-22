@@ -71,7 +71,7 @@
     justify-content: space-around;
     align-items: center;
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
 
 .oneMovie-comments textarea{
@@ -131,4 +131,11 @@
         height: 20px;
     }
 
+}
+
+.oneMovieMessage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
 }

@@ -8,8 +8,8 @@ import NotLikedStar from '../../Utils/icons/bEmptyHeart.svg';
 import LikedStar from '../../Utils/icons/favorite.svg';
 
 
-const URL_API = "http://localhost/new/favorites";
-const URL_API_DELETE = "http://localhost/new/favorites?nameId=id_movie_favorite&id="
+const URL_API = "https://sitensobe.000webhostapp.com/favorites";
+const URL_API_DELETE = "https://sitensobe.000webhostapp.com/favorites?nameId=id_movie_favorite&id="
 
 export const CardMovie = ({ id, title, img, likedMovies }) => {
 

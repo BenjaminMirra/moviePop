@@ -4,7 +4,7 @@ import axios from 'axios';
 import { CardMovie } from '../../Molecules/CardMovie/CardMovie';
 import ImageTest from '../../Utils/Images/imageTest.webp'
 
-const URL_FAV = "http://localhost/new/relations?rel=favorites,users&type=favorite,user&linkTo=id_user&equalTo=";
+const URL_FAV = "https://sitensobe.000webhostapp.com/relations?rel=favorites,users&type=favorite,user&linkTo=id_user&equalTo=";
 const URL_API = "https://api.tvmaze.com/shows/";
 
 export const Favoritos = ({ likedMovies }) => {

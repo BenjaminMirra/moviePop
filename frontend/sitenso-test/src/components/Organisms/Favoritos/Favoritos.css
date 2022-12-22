@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 35px;
     background-color: #eee;
     height: 84vh;
 }
@@ -15,4 +16,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+}
+
+@media (max-width: 1080px){
+    .favoritos{
+        height: 100%
+    }
 }

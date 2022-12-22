@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react'
 import './CommentsMovie.css'
 
-const URL_DB = "http://localhost/new/users?select=*&linkTo=id_user&equalTo="
+const URL_DB = "https://sitensobe.000webhostapp.com/users?select=*&linkTo=id_user&equalTo="
 
 export const CommentsMovie = ({ comment, user_id }) => {
 

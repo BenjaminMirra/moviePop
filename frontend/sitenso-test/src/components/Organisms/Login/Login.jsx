@@ -3,8 +3,7 @@ import { Input } from '../../Atoms/Input/Input';
 import { Button } from '../../Atoms/Button/Button';
 import './Login.css'
 
-
-const URL_LOGIN = "http://localhost/new/users?login=true&suffix=user";
+const URL_LOGIN = "https://sitensobe.000webhostapp.com/users?login=true&suffix=user";
 
 export const Login = () => {
 
@@ -16,13 +15,11 @@ export const Login = () => {
     const [message, setMessage] = useState("")
 
     const handleChange = () => (event) => {
-        console.log(event);
         const { value, name } = event.target;
         setFormValues({ ...formValues, [name]: value });
     };
 
     const firstValidation = (email,pass) =>{
-        console.log(email,pass);
         if(email === ""){
             return null
         }else if(pass === ""){
@@ -84,8 +81,6 @@ export const Login = () => {
             setError(true)
             setMessage("El correo electrónico no puede estar vacío.")
         }
-        
-
     }
 
     const handleLogin = (e) => {

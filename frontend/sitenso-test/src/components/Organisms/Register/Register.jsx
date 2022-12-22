@@ -5,7 +5,7 @@ import './Register.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-const URL_LOGIN = "http://localhost/new/users?register=true&suffix=user";
+const URL_LOGIN = "https://sitensobe.000webhostapp.com/users?register=true&suffix=user";
 
 export const Register = () => {
 
@@ -55,7 +55,6 @@ export const Register = () => {
         };
 
         if (!firstValidation(email)) {
-            console.log(email);
             setError(true);
             return setMessage("El correo electrónico no puede estar vacío.")
         } else if (!firstValidation(password)) {
@@ -93,7 +92,6 @@ export const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault()
         sendData(URL_LOGIN, dataForm.email, dataForm.password, dataForm.rePassword)
-        console.log(dataForm);
     }
 
     return (
