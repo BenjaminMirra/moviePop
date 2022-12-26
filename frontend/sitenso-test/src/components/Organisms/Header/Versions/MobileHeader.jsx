@@ -11,9 +11,9 @@ export const MobileHeader = ({ handleLogout, logged, isLogged }) => {
             isLogged(true);
         } else {
             isLogged(false)
-            
+
         }
-    }, [isLogged,logged])
+    }, [isLogged, logged])
 
 
     return (
