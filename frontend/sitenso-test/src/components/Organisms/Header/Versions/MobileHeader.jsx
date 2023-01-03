@@ -18,9 +18,6 @@ export const MobileHeader = ({ handleLogout, logged, isLogged }) => {
 
     return (
         <div className="MobileHeader">
-            <div className="MobileHeader-image">
-                <img src={Sitenso} alt="logo" />
-            </div>
             <div className="MobileHeader-items">
                 {logged ? (
                     <>

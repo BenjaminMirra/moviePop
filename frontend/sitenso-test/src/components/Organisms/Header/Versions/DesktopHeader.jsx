@@ -17,9 +17,6 @@ export const DesktopHeader = ({handleLogout, logged, isLogged}) => {
 
   return (
     <div className="DesktopHeader">
-      <div className="DesktopHeader-image">
-        <img src={Sitenso} alt="logo" />
-      </div>
       <div className="DesktopHeader-items">
         {logged ? (
           <>
